@@ -1,0 +1,21 @@
+{% if blogs %}
+<div class="panel panel-default">
+    <div class="panel-heading"><h3 class="panel-title">my blog posts</h3></div>
+      {% for blog in blogs %}
+		<div class="single_blog_container" style="background-color: #A9A9A9; border-style: solid; border-width: 5px;border-color: #003366; margin-bottom: 10px;">
+			<a href="/blog/{{blog.slug}}" style="text-decoration: none;   color:inherit;">
+				<div class="body-content">
+            		{% include "wagtail_/includes/streamfield.html" with content=blog.body %}
+				</div>
+				{% include "wagtail_/map_leaflet_wagtail.html" with map=blog.maps %}
+				<div style="width: 60%;">
+					<div id="the_map_wag_{{blog.maps.id}}"></div>
+				</div>
+			</a>
+		</div>
+		<div></div>
+      {% endfor %}
+  </div>
+{% endif %}
+    
+    

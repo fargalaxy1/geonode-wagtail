@@ -1,0 +1,12 @@
+
+{% include "wagtail_/map_leaflet_wagtail.html" with map=page.maps %}
+
+
+<div class="mine">
+	{{page.date}} <br>
+	{{page.body}} <br>
+
+	<div style="width: 60%;">
+		<div id="the_map_wag_{{page.maps.id}}"></div>
+	</div>
+</div>
